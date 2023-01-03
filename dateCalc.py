@@ -3,6 +3,8 @@ class date:
         v_y = y
         v_m = m
         v_d = d
+    def print_date(self):
+        print('date(, , )')
 
 class days:
     def __init__(self, d):
@@ -23,8 +25,8 @@ class months:
         pass
 
 class today:
-    def __init__(self):
-        value = date(2023,1,3)
+    def __init__(self, date):
+        self.date = date
 class tomorrow:
     def __init__(self):
         return date(2023,1,4)
@@ -43,7 +45,8 @@ def operation(item, stack):
     if item is days:
         pass
     if item is today:
-        stack.append(today.value)
+        value = item(2023,1,3)
+        stack.append(value)
     if item is tomorrow:
         pass
     if item is yesterday:
@@ -54,7 +57,8 @@ def operation(item, stack):
         pass
     if item == 'swap':
         pass
-    print(stack)
     return stack
 if __name__ == '__main__':
-    eval([today])
+    #eval([today])
+    today = date(2023,1,4)
+    print(type(today))
