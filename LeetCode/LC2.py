@@ -5,9 +5,7 @@ class ListNode:
          self.next = next
 
 class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        
-l1 = [2,4,3]
-l2 = [5,6,4]
+    def addTwoNumbers(self, l1, l2):
+
 s = Solution()
-print(s.addTwoNumbers(s,l1,l2))
+print(s.addTwoNumbers(l1,l2))
