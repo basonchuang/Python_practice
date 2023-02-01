@@ -6,9 +6,14 @@ class Solution(object):
         """
         stack, match = [], {"]": "[", "}": "{", ")": "("}
         for char in s:
-            if char in match:
-                if not (stack and stack.pop() == match[char]):
+            if char not in match:
+                stack.append(char)
+            else:
+                if not stack or stack.pop() != match[char]:
                     return False
-                else:
-                    stack.append(char)
         return not stack
+
+s = "()"
+
+sol = Solution()
+print(sol.isValid(s))
