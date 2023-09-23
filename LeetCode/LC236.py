@@ -32,8 +32,15 @@ class Solution(object):
 
 root = None
 input = input("Input: ")
-input = input[1:-1]
-for i in input.split(','):
+
+input_root = input.split('root = [')
+input_root = str(input_root[1]).split(']')[0]
+
+p = eval(input.split('p = ')[-1][0])
+q = eval(input.split('q = ')[-1][0])
+
+for i in input_root.split(','):
+
     if i != 'null':
         # is value
         root = insert(root, eval(i))
@@ -42,4 +49,6 @@ for i in input.split(','):
         i = None
         root = insert(root, None)
 
-pre_order_traversal(root)
+s = Solution()
+s.lowestCommonAncestor(root, p, q)
+#pre_order_traversal(root)
